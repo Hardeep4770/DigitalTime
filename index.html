@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-light.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+    <title>Digital Clock by Hardeep4770</title>
+  </head>
+
+  <body>
+    <header>
+      <div class="inner">
+        <h1>Digital Clock</h1>
+        <h2>Show Digital Clock into your Website</h2>
+        <a href="https://github.com/Hardeep4770/DigitalTime" class="button"><small>View project on</small> GitHub</a>
+      </div>
+    </header>
+
+    <div id="content-wrapper">
+      <div class="inner clearfix">
+        <section id="main-content">
+          <h1>
+<a id="welcome-to-digital-clock" class="anchor" href="#welcome-to-digital-clock" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Welcome to Digital Clock</h1>
+
+<p>I have created a code to show Digital Clock into your website. I have created this code using HTML and Jquery.
+You can use this code show Digital Clock into any website you want.</p>
+
+<h2>
+<a id="html--jquery" class="anchor" href="#html--jquery" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>HTML &amp; Jquery</h2>
+
+<p>To use my code of Digital Clock you must have a basic knowledge of HTML &amp; jQuery. As i mentioned earlier that this code is created using HTML &amp; jQuery.
+You will need the jQuery library to run this code. You can download the latest jQuery from <a href="https://jquery.com/download/">Here</a>
+I am using jQuery 1.10.2</p>
+
+<p>Once you get the jQuery, you will need to copy the jQuery file to somewhere into your project.
+The code to add the jQuery to your HTML page is:</p>
+
+<p><code>&lt;script type="text/javascript" src="jquery-1.10.2.js"&gt;&lt;/script&gt;</code></p>
+
+<p>Note: you can change your path of "src" to something like "js/jquery-1.10.2.js".</p>
+
+<p>So, we are ready to go with HTML code now
+First you have to copy the below code and paste it somewhere into your HTML page where ever you want to show the Digital Clock.</p>
+
+<h3>
+<a id="code-goes-like-this" class="anchor" href="#code-goes-like-this" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Code Goes like this</h3>
+
+<p>HTML Code:
+<code>&lt;body onload="startTime()"&gt;
+    &lt;div&gt;
+       &lt;div id="time"&gt;&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/body&gt;</code></p>
+
+<p>jQuery Code:</p>
+
+<pre><code>`&lt;script&gt;
+    function startTime() {
+        var today = new Date();
+        var h = today.getHours();
+        var m = today.getMinutes();
+        var s = today.getSeconds();
+        // add a zero in front of numbers&lt;10
+        m = checkTime(m);
+        s = checkTime(s);
+        document.getElementById('time').innerHTML = h + ":" + m + ":" + s;
+        t = setTimeout(function () { startTime() }, 500);
+    }
+
+    function checkTime(i) {
+        if (i &lt; 10) {
+            i = "0" + i;
+        }
+        return i;
+    }
+&lt;/script&gt;` 
+</code></pre>
+
+<h3>
+<a id="how-it-works" class="anchor" href="#how-it-works" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>How it works</h3>
+
+<p>In the "BODY" tag i have called a function "startTime()" on onload. It means when body loads it will call the function to start working and show time.
+There should some element like "Div" to have a unique ID. This "Div" will be fetched by the jQuery function "startTime()" to show the current time into that "Div".</p>
+
+<p>jQuery funtion "startTime()" will calculate the time using "Date()" function of jQuery. Then it will save the hour, minutes and seconds in some variables. Now, the "Div" with "ID" as "time" is fetched and all the variables are displayed into it.
+"checkTime()" function is created to add zero in from of single digits.</p>
+
+<h3>
+<a id="author-and-contributor" class="anchor" href="#author-and-contributor" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author and Contributor</h3>
+
+<p>GitHub Profile: Hardeep Singh <a href="https://github.com/Hardeep4770">@Hardeep4770</a>
+Visit my Websites : <a href="http://examjobresult.com">ExamJobResult</a>, <a href="http://examminds.com">ExamMinds</a></p>
+        </section>
+
+        <aside id="sidebar">
+          <a href="https://github.com/Hardeep4770/DigitalTime/zipball/master" class="button">
+            <small>Download</small>
+            .zip file
+          </a>
+          <a href="https://github.com/Hardeep4770/DigitalTime/tarball/master" class="button">
+            <small>Download</small>
+            .tar.gz file
+          </a>
+
+          <p class="repo-owner"><a href="https://github.com/Hardeep4770/DigitalTime"></a> is maintained by <a href="https://github.com/Hardeep4770">Hardeep4770</a>.</p>
+
+          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
+        </aside>
+      </div>
+    </div>
+
+  
+  </body>
+</html>
